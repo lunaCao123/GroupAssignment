@@ -12,6 +12,9 @@ public class QuestionBank {
     public static Question getQuestionByTopic(int topicID) {
         return questions.get(topicID);
     }
+    public static ArrayList<Question>getQuestionListByTopic(int topicID){
+        return new ArrayList<Question>((List)Arrays.asList(questions.get(topicID)));
+    }
 
     public static ArrayList<Question> getAllQuestions() {
         return new ArrayList<Question>((List) Arrays.asList(questions.values().toArray()));

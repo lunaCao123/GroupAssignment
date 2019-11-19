@@ -22,6 +22,10 @@ public class TopicDetail2Fragment extends Fragment {
     private ImageView detail2_image;
     private int topicID;
 
+    public TopicDetail2Fragment(){
+
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

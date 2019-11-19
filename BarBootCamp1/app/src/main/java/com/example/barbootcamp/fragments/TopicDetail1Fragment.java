@@ -22,6 +22,10 @@ public class TopicDetail1Fragment extends Fragment {
    private ImageButton detail_nextButton;
    private int topicID;
 
+   public TopicDetail1Fragment(){
+
+   }
+
    @Override
     public void onCreate(Bundle savedInstanceState) {
        super.onCreate(savedInstanceState);

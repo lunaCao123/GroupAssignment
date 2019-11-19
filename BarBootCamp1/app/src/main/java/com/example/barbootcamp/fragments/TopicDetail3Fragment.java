@@ -24,6 +24,10 @@ public class TopicDetail3Fragment extends Fragment {
     private ImageView detail3_image;
     private int topicID;
 
+    public TopicDetail3Fragment(){
+
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,19 +47,19 @@ public class TopicDetail3Fragment extends Fragment {
         detail3_topicName.setText(topic.getTopicName());
         detail3_topicDetail.setText(topic.getDetail2());
         detail3_image.setImageResource(topic.getImageDrawableId());
-//        detail3_quizButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                TopicDetail3Fragment topicDetail3Fragment = new TopicDetail3Fragment();
-//                Bundle bundle = new Bundle();
-//                bundle.putInt("id", topic.getTopicID());
-//                topicDetail3Fragment.setArguments(bundle);
-//
-//                ((FragmentActivity) v.getContext()).getSupportFragmentManager()
-//                        .beginTransaction().replace(R.id.fragmentMain_slot,
-//                        topicDetail3Fragment).commit();
-//            }
-//        });
+        detail3_quizButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                QuizRecyclerFragment quizRecyclerFragment = new QuizRecyclerFragment();
+                Bundle bundle = new Bundle();
+                bundle.putInt("id", topic.getTopicID());
+                quizRecyclerFragment.setArguments(bundle);
+
+                ((FragmentActivity) v.getContext()).getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.fragmentMain_slot,
+                        quizRecyclerFragment).commit();
+            }
+        });
         return view;
 
     }
