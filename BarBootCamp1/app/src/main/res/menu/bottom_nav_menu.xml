@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_topics"
+        android:icon="@drawable/ic_test_quiz_svgrepo_com"
+        android:title="Topics"/>
+
+    <item
+        android:id="@+id/nav_progress"
+        android:icon="@drawable/ic_progress_report_svgrepo_com"
+        android:title="Progress"/>
+
+</menu>

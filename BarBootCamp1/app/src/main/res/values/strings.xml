@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Bar Boot Camp</string>
+    <string name="app_logo">Logo</string>
+    <string name="welcomelogo">Welcome</string>
+    <string name="user_name">Please Enter Your Name</string>
+    <string name="start_app">start logo</string>
+    <string name="hi_text">Hi</string>
+    <string name="userName">Name</string>
+    <string name="choose">Are you here for Entertainment or to become a Professional Bartender?</string>
+    <string name="fun_btn">Learn for Fun!</string>
+    <string name="learn_btn">Bartender Course</string>
+    <string name="topic_name">Topic Name</string>
+    <string name="topic_title">Topic Title</string>
+    <string name="topic_level">Topic Level</string>
+    <string name="cocktail_name">Cocktail Name</string>
+    <string name="cocktail_level">Cocktail Level</string>
+    <string name="quiz_question">Question </string>
+    <string name="quiz_questionID">no</string>
+    <string name="quiz_answer">sample answer</string>
+    <string name="sumbit_btn">Submit</string>
+    <string name="cancel_btn">Cancel</string>
+</resources>

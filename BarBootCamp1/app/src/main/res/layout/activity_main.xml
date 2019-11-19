@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/welcome_cl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activities.MainActivity">
+
+    <ImageView
+        android:id="@+id/welcomPage_logo"
+        android:layout_width="156dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="100dp"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/app_logo"
+        android:scaleType="fitCenter"
+        android:tint="@color/goldYellow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_cocktail_glass_with_a_orange_slice_svgrepo_com" />
+
+    <TextView
+        android:id="@+id/welcomePage_welcomeText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/welcomelogo"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomePage_appName" />
+
+    <TextView
+        android:id="@+id/welcomePage_appName"
+        android:layout_width="165dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/app_name"
+        android:textAllCaps="true"
+        android:textColor="@color/goldYellow"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomPage_logo" />
+
+    <EditText
+        android:id="@+id/welcomePage_userNameEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:editable="true"
+        android:ems="10"
+        android:hint="@string/user_name"
+        android:inputType="textPersonName"
+        android:textColor="@color/goldYellow"
+        android:textColorHint="@color/colorAccent"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomePage_welcomeText" />
+
+    <ImageButton
+        android:id="@+id/welcomePage_startButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="85dp"
+        android:background="@color/colorPrimary"
+        android:contentDescription="@string/start_app"
+        android:onClick="setStartButton"
+        android:scaleType="fitXY"
+        app:layout_constraintStart_toEndOf="@+id/welcomePage_userNameEditText"
+        app:layout_constraintTop_toBottomOf="@+id/welcomePage_welcomeText"
+        tools:srcCompat="@drawable/ic_arrow_forward_gold" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
