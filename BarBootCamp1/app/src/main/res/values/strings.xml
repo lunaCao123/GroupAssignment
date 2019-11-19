@@ -23,4 +23,5 @@
     <string name="lesson1_lb">Lesson 1: </string>
     <string name="lesson2_lb">Lesson 2: </string>
     <string name="lesson3_lb">Lesson 3: </string>
+    <string name="quiz_btn">QUIZ</string>
 </resources>

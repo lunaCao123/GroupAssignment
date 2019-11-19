@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 
 import com.example.barbootcamp.R;
 import com.example.barbootcamp.model.Topic;
@@ -35,12 +36,25 @@ public class TopicDetail1Fragment extends Fragment {
        detail_topicDetail1 = view. findViewById(R.id.topicDetail_detail1Text);
        detail_topicImage = view.findViewById(R.id.topicDetail_imageView);
        detail_nextButton = view.findViewById(R.id.topicDetail_nextButton);
-       Topic topic = TopicsDB.getTopicById(topicID);
+       final Topic topic = TopicsDB.getTopicById(topicID);
 
        detail_topicName.setText(topic.getTopicName());
        detail_topicDetail1.setText(topic.getDetail1());
        detail_topicImage.setImageResource(topic.getImageDrawableId());
        detail_nextButton.setImageResource(R.drawable.ic_arrow_forward_gold);
+       detail_nextButton.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+             TopicDetail2Fragment topicDetail2Fragment = new TopicDetail2Fragment();
+             Bundle bundle = new Bundle();
+             bundle.putInt("id",topic.getTopicID());
+             topicDetail2Fragment.setArguments(bundle);
+
+             ((FragmentActivity)v.getContext()).getSupportFragmentManager()
+                     .beginTransaction().replace(R.id.fragmentMain_slot,
+                     topicDetail2Fragment).commit();
+          }
+       });
        return view;
 
    }
