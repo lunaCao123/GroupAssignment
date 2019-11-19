@@ -19,4 +19,8 @@
     <string name="quiz_answer">sample answer</string>
     <string name="sumbit_btn">Submit</string>
     <string name="cancel_btn">Cancel</string>
+    <string name="topiclvl_label">Topic Level:</string>
+    <string name="lesson1_lb">Lesson 1: </string>
+    <string name="lesson2_lb">Lesson 2: </string>
+    <string name="lesson3_lb">Lesson 3: </string>
 </resources>

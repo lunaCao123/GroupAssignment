@@ -10,10 +10,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.barbootcamp.R;
+import com.example.barbootcamp.activities.TopicAdapter;
+import com.example.barbootcamp.model.TopicsDB;
 
 public class TopicRecyclerFragment extends Fragment {
 
     private RecyclerView recyclerView;
+
 
     public TopicRecyclerFragment(){
 
@@ -25,6 +28,10 @@ public class TopicRecyclerFragment extends Fragment {
         recyclerView = view.findViewById(R.id.rv_topics);
         LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
         recyclerView.setLayoutManager(layoutManager);
+
+        TopicAdapter topicAdapter = new TopicAdapter();
+        topicAdapter.setTopicData(TopicsDB.getAllTopics());
+        recyclerView.setAdapter(topicAdapter);
 
         return view;
     }

@@ -2,7 +2,7 @@ package com.example.barbootcamp.model;
 
 public class Topic {
 
-    private long topicID;
+    private int topicID;
     private String topicName;
     private String level;
     private String detail1;
@@ -11,7 +11,7 @@ public class Topic {
     private int imageDrawableId;
     private String quizName;
 
-    public Topic (long topicID, String topicName, String level, String detail1, String detail2, String detail3, int imageDrawableId, String quizName) {
+    public Topic (int topicID, String topicName, String level, String detail1, String detail2, String detail3, int imageDrawableId, String quizName) {
         this.topicID = topicID;
         this.topicName = topicName;
         this.level = level;
@@ -22,9 +22,9 @@ public class Topic {
         this.quizName = quizName;
     }
 
-    public long getTopicID() { return topicID; }
+    public int getTopicID() { return topicID; }
 
-    public void setTopicID(long topicID) { this.topicID = topicID; }
+    public void setTopicID(int topicID) { this.topicID = topicID; }
 
     public String getTopicName() { return topicName; }
 
