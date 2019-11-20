@@ -1,5 +1,6 @@
 package com.example.barbootcamp.model;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
@@ -7,6 +8,7 @@ import androidx.room.PrimaryKey;
 public class Cocktail {
 
     @PrimaryKey
+    @NonNull
     private int idDrink;
     private String strDrink;
     private String strCategory;
@@ -30,10 +32,6 @@ public class Cocktail {
     private String strMeasure6;
     private String strMeasure7;
     private String strMeasure8;
-
-    public Cocktail(){
-
-    }
 
     public Cocktail(int idDrink, String strDrink, String strCategory, String strAlcoholic,
                     String strGlass, String strInstructions, String strDrinkThumb,
