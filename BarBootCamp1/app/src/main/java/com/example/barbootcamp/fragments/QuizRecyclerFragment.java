@@ -15,6 +15,7 @@ import com.example.barbootcamp.activities.QuizAdapter;
 import com.example.barbootcamp.model.Question;
 import com.example.barbootcamp.model.QuestionBank;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class QuizRecyclerFragment extends Fragment {
@@ -23,6 +24,8 @@ public class QuizRecyclerFragment extends Fragment {
     private Button submitBtn;
     private Button cancelBtn;
     private int topicID;
+    private List<Question>questionList;
+    private List<Question>newQlist;
 
     public QuizRecyclerFragment(){
 
@@ -42,7 +45,8 @@ public class QuizRecyclerFragment extends Fragment {
         recyclerView.setLayoutManager(layoutManager);
 
         QuizAdapter quizAdapter = new QuizAdapter();
-        quizAdapter.setQuestionData(QuestionBank.getAllQuestions());
+        questionList = QuestionBank.getAllQuestions();
+        quizAdapter.setQuestionData(questionList);
         recyclerView.setAdapter(quizAdapter);
 
 

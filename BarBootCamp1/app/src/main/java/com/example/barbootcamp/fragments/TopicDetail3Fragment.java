@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -45,7 +44,7 @@ public class TopicDetail3Fragment extends Fragment {
         final Topic topic = TopicsDB.getTopicById(topicID);
 
         detail3_topicName.setText(topic.getTopicName());
-        detail3_topicDetail.setText(topic.getDetail2());
+        detail3_topicDetail.setText(topic.getDetail3());
         detail3_image.setImageResource(topic.getImageDrawableId());
         detail3_quizButton.setOnClickListener(new View.OnClickListener() {
             @Override

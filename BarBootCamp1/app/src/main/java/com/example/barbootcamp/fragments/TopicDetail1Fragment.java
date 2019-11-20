@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -21,6 +22,7 @@ public class TopicDetail1Fragment extends Fragment {
    private ImageView detail_topicImage;
    private ImageButton detail_nextButton;
    private int topicID;
+   private Button detail_quizButton;
 
    public TopicDetail1Fragment(){
 
@@ -40,6 +42,7 @@ public class TopicDetail1Fragment extends Fragment {
        detail_topicDetail1 = view. findViewById(R.id.topicDetail_detail1Text);
        detail_topicImage = view.findViewById(R.id.topicDetail_imageView);
        detail_nextButton = view.findViewById(R.id.topicDetail_nextButton);
+       detail_quizButton = view.findViewById(R.id.topicDetail1_quizBtn);
        final Topic topic = TopicsDB.getTopicById(topicID);
 
        detail_topicName.setText(topic.getTopicName());
@@ -59,6 +62,19 @@ public class TopicDetail1Fragment extends Fragment {
                      topicDetail2Fragment).commit();
           }
        });
+       detail_quizButton.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View v) {
+            QuizRecyclerFragment quizRecyclerFragment = new QuizRecyclerFragment();
+            Bundle bundle = new Bundle();
+            bundle.putInt("id", topic.getTopicID());
+            quizRecyclerFragment.setArguments(bundle);
+
+            ((FragmentActivity) v.getContext()).getSupportFragmentManager()
+                    .beginTransaction().replace(R.id.fragmentMain_slot,
+                    quizRecyclerFragment).commit();
+         }
+      });
        return view;
 
    }

@@ -44,8 +44,6 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
         holder.b_rbtn.setText(questionAtPosition.option2);
         holder.c_rbtn.setText(questionAtPosition.option3);
         holder.d_rbtn.setText(questionAtPosition.option4);
-
-
     }
 
 
@@ -63,8 +61,6 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
         public RadioButton b_rbtn;
         public RadioButton c_rbtn;
         public RadioButton d_rbtn;
-        public int topicID;
-
 
 
         public QuizViewHolder(View v) {
