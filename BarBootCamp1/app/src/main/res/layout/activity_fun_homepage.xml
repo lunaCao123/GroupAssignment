@@ -4,12 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".activities.FunActivityHomepage">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_cocktail"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="147dp"
-        tools:layout_editor_absoluteY="35dp" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/cocktail_bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="80dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/cocktail_bottom_nav_menu" />
+
+
+    <FrameLayout
+        android:id="@+id/cocktail_fragmentslot"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/cocktail_bottomNav"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
