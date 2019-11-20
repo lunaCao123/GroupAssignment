@@ -1,5 +1,6 @@
 package com.example.barbootcamp.activities;
 
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.barbootcamp.R;
 import com.example.barbootcamp.model.Question;
+import com.example.barbootcamp.model.Topic;
 
 import java.util.List;
 
@@ -33,7 +35,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
     @Override
     public void onBindViewHolder(@NonNull QuizViewHolder holder, int position) {
         final Question questionAtPosition = questionsToAdapt.get(position);
-        int quizno = questionAtPosition.getQuestionID();
+        int quizno = questionAtPosition.getQuestionNumber();
         String quizNvm = Integer.toString(quizno);
 
         holder.qnvm.setText(quizNvm);
@@ -45,6 +47,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
 
 
     }
+
 
     @Override
     public int getItemCount() {
@@ -60,6 +63,8 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
         public RadioButton b_rbtn;
         public RadioButton c_rbtn;
         public RadioButton d_rbtn;
+        public int topicID;
+
 
 
         public QuizViewHolder(View v) {
