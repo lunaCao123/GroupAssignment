@@ -1,10 +1,14 @@
 package com.example.barbootcamp.fragments;
 
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -50,7 +54,7 @@ public class QuizRecyclerFragment extends Fragment {
 
         QuizAdapter quizAdapter = new QuizAdapter();
         questionList = QuestionBank.getAllQuestions();
-        List<Question>newQlist = new ArrayList<>();
+        final List<Question>newQlist = new ArrayList<>();
         for(Question q: this.questionList){
             if(q.getTopicID().equals(topicId)){
                 newQlist.add(q);
@@ -58,10 +62,23 @@ public class QuizRecyclerFragment extends Fragment {
         }
         quizAdapter.setQuestionData(newQlist);
         recyclerView.setAdapter(quizAdapter);
-
-
+        submitBtn = view.findViewById(R.id.quizFragment_submitBtn);
+        submitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                for(Question q: newQlist) {
+                        RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.quiz_radioGroup);
+                        int selectedId = radioGroup.getCheckedRadioButtonId();
+                        int answer = q.getAnswer();
+                        if (selectedId == answer) {
+                            score += 1;
+                        } else {
+                            score += 0;
+                        }
+                }
+                System.out.print("You got " + score + " in your quiz");
+            }
+        });
         return view;
     }
-
-
 }

@@ -5,7 +5,7 @@ public class Question {
     public String topicID;
     public int questionNumber;
     public String question;
-    public String answer;
+    public int answer;
     public String option1;
     public String option2;
     public String option3;
@@ -15,7 +15,7 @@ public class Question {
                      String topicID,
                      int questionNumber,
                      String question,
-                     String answer,
+                     int answer,
                      String option1,
                      String option2,
                      String option3,
@@ -47,9 +47,9 @@ public class Question {
 
     public void setQuestion(String question) { this.question = question; }
 
-    public String getAnswer() { return answer; }
+    public int getAnswer() { return answer; }
 
-    public void setAnswer(String answer) { this.answer = answer; }
+    public void setAnswer(int answer) { this.answer = answer; }
 
     public String getOption1() { return option1; }
 
