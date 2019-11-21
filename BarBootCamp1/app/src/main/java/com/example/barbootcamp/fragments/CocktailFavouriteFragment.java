@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.barbootcamp.R;
+import com.example.barbootcamp.activities.CocktailAdapter;
 import com.example.barbootcamp.model.Cocktail;
 
 import java.util.ArrayList;
@@ -29,6 +30,11 @@ public class CocktailFavouriteFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.favourite_rv);
         LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
+        recyclerView.setLayoutManager(layoutManager);
+
+        final CocktailAdapter cocktailAdapter = new CocktailAdapter();
+        cocktailAdapter.setCocktailData(favCocktails);
+        recyclerView.setAdapter(cocktailAdapter);
         return view;
     }
 }

@@ -14,6 +14,9 @@ import com.example.barbootcamp.R;
 import com.example.barbootcamp.database.CocktailDatabase;
 import com.example.barbootcamp.model.Cocktail;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CocktailDetailFragment extends Fragment {
     private TextView cocktailDetail_drinkNameTxt;
     private TextView cocktailDetail_glassTypeTxt;
@@ -33,7 +36,8 @@ public class CocktailDetailFragment extends Fragment {
     private ImageView cocktailDetail_imageView;
     private int idDrink;
     private ImageView cocktailDetail_fav;
-    private ImageView cocktailDetail_notFav;
+    public boolean isFavoaurite = false;
+    private String drinkName;
 
     public CocktailDetailFragment(){
 
@@ -63,14 +67,14 @@ public class CocktailDetailFragment extends Fragment {
         cocktailDetail_meas5Txt = view.findViewById(R.id.cocktailDetail_meas5);
         cocktailDetail_meas6Txt = view.findViewById(R.id.cocktailDetail_meas6);
         cocktailDetail_imageView = view.findViewById(R.id.cocktailDetail_image);
-        cocktailDetail_notFav = view.findViewById(R.id.cocktailDetail_favboarder);
-        cocktailDetail_fav = view.findViewById(R.id.cocktailDetail_favheart);
-        cocktailDetail_fav.setVisibility(View.INVISIBLE);
+        cocktailDetail_fav = view.findViewById(R.id.cocktailDetail_favboarder);
+
         cocktailDetail_instructionTxt = view.findViewById(R.id.cocktailDetail_instruction);
         CocktailDatabase cocktailDatabase = CocktailDatabase.getInstance(view.getContext());
         final Cocktail cocktail = cocktailDatabase.cocktailDao().findCocktailById(idDrink);
 
         cocktailDetail_drinkNameTxt.setText(cocktail.getStrDrink());
+        drinkName = cocktailDetail_drinkNameTxt.getText().toString();
         cocktailDetail_glassTypeTxt.setText(cocktail.getStrGlass());
         cocktailDetail_ing1Txt.setText(cocktail.getStrIngredient1());
         cocktailDetail_meas1Txt.setText(cocktail.getStrMeasure1());
@@ -141,6 +145,25 @@ public class CocktailDetailFragment extends Fragment {
         }else{
             Glide.with(view.getContext()).load(R.drawable.cocktails).into(cocktailDetail_imageView);
         }
+
+        cocktailDetail_fav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isFavoaurite){
+                    cocktailDetail_fav.setImageResource(R.drawable.ic_favorite_border_red);
+                }else{
+                    cocktailDetail_fav.setImageResource(R.drawable.ic_favorite_red);
+                    CocktailFavouriteFragment.favCocktails.add(cocktail);
+//                    for(Cocktail s : CocktailFavouriteFragment.favCocktails){
+//                        if(!s.getStrDrink().equals(cocktail.getStrDrink())){
+//                            CocktailFavouriteFragment.favCocktails.add(s);
+//                        }
+//                    }
+                 }
+                isFavoaurite = !isFavoaurite;
+            }
+
+        });
         return view;
     }
 
