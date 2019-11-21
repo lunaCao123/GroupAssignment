@@ -22,16 +22,12 @@ public class Cocktail {
     private String strIngredient4;
     private String strIngredient5;
     private String strIngredient6;
-    private String strIngredient7;
-    private String strIngredient8;
     private String strMeasure1;
     private String strMeasure2;
     private String strMeasure3;
     private String strMeasure4;
     private String strMeasure5;
     private String strMeasure6;
-    private String strMeasure7;
-    private String strMeasure8;
 
     public Cocktail(int idDrink, String strDrink, String strCategory, String strAlcoholic,
                     String strGlass, String strInstructions, String strDrinkThumb,
@@ -39,7 +35,7 @@ public class Cocktail {
                     String strIngredient4, String strIngredient5, String strIngredient6,
                     String strIngredient7, String strIngredient8, String strMeasure1,
                     String strMeasure2, String strMeasure3, String strMeasure4, String strMeasure5,
-                    String strMeasure6, String strMeasure7, String strMeasure8) {
+                    String strMeasure6) {
         this.idDrink = idDrink;
         this.strDrink = strDrink;
         this.strCategory = strCategory;
@@ -53,16 +49,12 @@ public class Cocktail {
         this.strIngredient4 = strIngredient4;
         this.strIngredient5 = strIngredient5;
         this.strIngredient6 = strIngredient6;
-        this.strIngredient7 = strIngredient7;
-        this.strIngredient8 = strIngredient8;
         this.strMeasure1 = strMeasure1;
         this.strMeasure2 = strMeasure2;
         this.strMeasure3 = strMeasure3;
         this.strMeasure4 = strMeasure4;
         this.strMeasure5 = strMeasure5;
         this.strMeasure6 = strMeasure6;
-        this.strMeasure7 = strMeasure7;
-        this.strMeasure8 = strMeasure8;
     }
 
     public int getIdDrink() {
@@ -169,22 +161,6 @@ public class Cocktail {
         this.strIngredient6 = strIngredient6;
     }
 
-    public String getStrIngredient7() {
-        return strIngredient7;
-    }
-
-    public void setStrIngredient7(String strIngredient7) {
-        this.strIngredient7 = strIngredient7;
-    }
-
-    public String getStrIngredient8() {
-        return strIngredient8;
-    }
-
-    public void setStrIngredient8(String strIngredient8) {
-        this.strIngredient8 = strIngredient8;
-    }
-
     public String getStrMeasure1() {
         return strMeasure1;
     }
@@ -233,19 +209,4 @@ public class Cocktail {
         this.strMeasure6 = strMeasure6;
     }
 
-    public String getStrMeasure7() {
-        return strMeasure7;
-    }
-
-    public void setStrMeasure7(String strMeasure7) {
-        this.strMeasure7 = strMeasure7;
-    }
-
-    public String getStrMeasure8() {
-        return strMeasure8;
-    }
-
-    public void setStrMeasure8(String strMeasure8) {
-        this.strMeasure8 = strMeasure8;
-    }
 }
