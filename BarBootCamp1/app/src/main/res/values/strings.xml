@@ -26,8 +26,8 @@
     <string name="quiz_btn">QUIZ</string>
     <string name="Search_cocktail">Search Cocktails by First Letter</string>
     <string name="ingredient_lab">Ingredients</string>
-    <string name="ingredient_sample">Sample Ingredient</string>
-    <string name="measure_sample">Sample Measure</string>
+    <string name="ingredient_sample">Ingredient</string>
+    <string name="measure_sample">Measure</string>
     <string name="glass_lab">Glass: </string>
     <string name="glass">Sample Glass</string>
     <string name="Instructions_lab">Instructions</string>

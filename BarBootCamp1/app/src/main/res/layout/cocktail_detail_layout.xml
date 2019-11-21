@@ -73,134 +73,134 @@
 
     <TextView
         android:id="@+id/cocktailDetail_ing1"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/ingredient_sample"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-    <TextView
-        android:id="@+id/cocktailDetail_ing2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/ingredient_sample"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cocktailDetail_ing1" />
-
-    <TextView
-        android:id="@+id/cocktailDetail_ing3"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="4dp"
-        android:text="@string/ingredient_sample"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cocktailDetail_ing2" />
-
-    <TextView
-        android:id="@+id/cocktailDetail_ing4"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/ingredient_sample"
         app:layout_constraintStart_toEndOf="@+id/cocktailDetail_meas1"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/cocktailDetail_ing5"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:id="@+id/cocktailDetail_ing2"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="4dp"
         android:text="@string/ingredient_sample"
         app:layout_constraintStart_toEndOf="@+id/cocktailDetail_meas2"
+        app:layout_constraintTop_toBottomOf="@+id/cocktailDetail_ing1" />
+
+    <TextView
+        android:id="@+id/cocktailDetail_ing3"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/ingredient_sample"
+        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_meas3"
+        app:layout_constraintTop_toBottomOf="@+id/cocktailDetail_ing2" />
+
+    <TextView
+        android:id="@+id/cocktailDetail_ing4"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/ingredient_sample"
+        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_meas4"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/cocktailDetail_ing5"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/ingredient_sample"
+        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_meas5"
         app:layout_constraintTop_toBottomOf="@+id/cocktailDetail_ing4" />
 
     <TextView
         android:id="@+id/cocktailDetail_ing6"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="4dp"
         android:text="@string/ingredient_sample"
-        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_meas3"
+        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_meas6"
         app:layout_constraintTop_toBottomOf="@+id/cocktailDetail_ing5" />
 
     <TextView
         android:id="@+id/cocktailDetail_meas1"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
         android:text="@string/measure_sample"
-        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_ing1"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/cocktailDetail_meas2"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="4dp"
         android:text="@string/measure_sample"
-        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_ing2"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cocktailDetail_meas1" />
 
     <TextView
         android:id="@+id/cocktailDetail_meas3"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="4dp"
         android:text="@string/measure_sample"
-        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_ing3"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cocktailDetail_meas2" />
 
     <TextView
         android:id="@+id/cocktailDetail_meas4"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="8dp"
         android:text="@string/measure_sample"
-        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_ing4"
+        app:layout_constraintStart_toEndOf="@+id/divider3"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/cocktailDetail_meas5"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="4dp"
         android:text="@string/measure_sample"
-        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_ing5"
+        app:layout_constraintStart_toEndOf="@+id/divider3"
         app:layout_constraintTop_toBottomOf="@+id/cocktailDetail_meas4" />
 
     <TextView
         android:id="@+id/cocktailDetail_meas6"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="4dp"
         android:text="@string/measure_sample"
-        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_ing6"
+        app:layout_constraintStart_toEndOf="@+id/divider3"
         app:layout_constraintTop_toBottomOf="@+id/cocktailDetail_meas5" />
 
     <TextView
@@ -236,11 +236,11 @@
         android:id="@+id/divider3"
         android:layout_width="1dp"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginBottom="16dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toTopOf="@+id/textView18"
-        app:layout_constraintStart_toEndOf="@+id/cocktailDetail_meas1"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

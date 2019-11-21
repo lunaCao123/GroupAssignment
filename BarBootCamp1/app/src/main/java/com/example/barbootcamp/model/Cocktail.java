@@ -33,9 +33,8 @@ public class Cocktail {
                     String strGlass, String strInstructions, String strDrinkThumb,
                     String strIngredient1, String strIngredient2, String strIngredient3,
                     String strIngredient4, String strIngredient5, String strIngredient6,
-                    String strIngredient7, String strIngredient8, String strMeasure1,
-                    String strMeasure2, String strMeasure3, String strMeasure4, String strMeasure5,
-                    String strMeasure6) {
+                    String strMeasure1, String strMeasure2, String strMeasure3, String strMeasure4,
+                    String strMeasure5, String strMeasure6) {
         this.idDrink = idDrink;
         this.strDrink = strDrink;
         this.strCategory = strCategory;
