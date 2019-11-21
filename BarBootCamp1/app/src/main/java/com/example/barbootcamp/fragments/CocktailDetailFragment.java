@@ -32,6 +32,8 @@ public class CocktailDetailFragment extends Fragment {
     private TextView cocktailDetail_instructionTxt;
     private ImageView cocktailDetail_imageView;
     private int idDrink;
+    private ImageView cocktailDetail_fav;
+    private ImageView cocktailDetail_notFav;
 
     public CocktailDetailFragment(){
 
@@ -61,6 +63,9 @@ public class CocktailDetailFragment extends Fragment {
         cocktailDetail_meas5Txt = view.findViewById(R.id.cocktailDetail_meas5);
         cocktailDetail_meas6Txt = view.findViewById(R.id.cocktailDetail_meas6);
         cocktailDetail_imageView = view.findViewById(R.id.cocktailDetail_image);
+        cocktailDetail_notFav = view.findViewById(R.id.cocktailDetail_favboarder);
+        cocktailDetail_fav = view.findViewById(R.id.cocktailDetail_favheart);
+        cocktailDetail_fav.setVisibility(View.INVISIBLE);
         cocktailDetail_instructionTxt = view.findViewById(R.id.cocktailDetail_instruction);
         CocktailDatabase cocktailDatabase = CocktailDatabase.getInstance(view.getContext());
         final Cocktail cocktail = cocktailDatabase.cocktailDao().findCocktailById(idDrink);
