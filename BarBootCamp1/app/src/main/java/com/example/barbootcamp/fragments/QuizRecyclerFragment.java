@@ -28,6 +28,8 @@ public class QuizRecyclerFragment extends Fragment {
     private List<Question>questionList;
 
 
+    private int score;
+
     public QuizRecyclerFragment(){
 
     }
@@ -60,5 +62,6 @@ public class QuizRecyclerFragment extends Fragment {
 
         return view;
     }
+
 
 }
