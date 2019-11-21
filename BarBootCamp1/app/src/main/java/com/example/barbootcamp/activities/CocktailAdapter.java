@@ -40,6 +40,12 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
         final Cocktail cocktailAtPosition = cocktailsToAdapt.get(position);
         holder.cocktailNameTextView.setText(cocktailAtPosition.getStrDrink());
         holder.cocktailTypeTextview.setText(cocktailAtPosition.getStrCategory());
+        if(cocktailAtPosition.getStrDrinkThumb() != null){
+            String image = cocktailAtPosition.getStrDrinkThumb();
+            Glide.with(holder.view.getContext()).load(image).into(holder.cocktailImage);
+        }else{
+            Glide.with(holder.view.getContext()).load(R.drawable.cocktails).into(holder.cocktailImage);
+        }
 
 
     }
@@ -53,6 +59,7 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
         public View view;
         public TextView cocktailNameTextView;
         public TextView cocktailTypeTextview;
+        public ImageView cocktailImage;
 
 
         public CocktailViewHolder(View v) {
@@ -60,7 +67,10 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
             view = v;
             cocktailTypeTextview = v.findViewById(R.id.cocktail_cocktailTypeText);
             cocktailNameTextView = v.findViewById(R.id.cocktail_cocktailNameText);
+            cocktailImage = v.findViewById(R.id.cocktail_image);
         }
+
+
 
 
 //            String imageUrl = cocktail.getStrDrinkThumb();

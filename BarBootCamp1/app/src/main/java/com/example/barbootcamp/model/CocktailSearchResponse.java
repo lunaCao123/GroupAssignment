@@ -1,34 +1,17 @@
 package com.example.barbootcamp.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CocktailSearchResponse {
-    public String strDink;
-    public int idDrink;
-    public String strCategory;
-    public String strGlass;
-    public int num_results;
-    public CocktailSeach results;
 
-    public String getStrDink() {
-        return strDink;
+    public ArrayList<Cocktail> drinks;
+
+    public ArrayList<Cocktail> getDrinks() {
+        return drinks;
     }
 
-    public int getIdDrink() {
-        return idDrink;
-    }
-
-    public String getStrCategory() {
-        return strCategory;
-    }
-
-    public String getStrGlass() {
-        return strGlass;
-    }
-
-    public int getNum_results() {
-        return num_results;
-    }
-
-    public CocktailSeach getResults() {
-        return results;
+    public void setDrinks(ArrayList<Cocktail> drinks) {
+        this.drinks = drinks;
     }
 }

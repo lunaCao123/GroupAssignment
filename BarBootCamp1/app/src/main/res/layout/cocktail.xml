@@ -10,26 +10,28 @@
         android:id="@+id/cocktail_cocktailNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="36dp"
         android:text="@string/cocktail_name"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cocktail_image"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/cocktail_cocktailTypeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:layout_marginTop="12dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
         android:text="@string/cocktail_level"
-        android:textColor="@color/goldYellow"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/cocktail_image"
         app:layout_constraintTop_toBottomOf="@+id/cocktail_cocktailNameText" />
 
     <View
@@ -41,4 +43,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cocktail_cocktailTypeText" />
+
+    <ImageView
+        android:id="@+id/cocktail_image"
+        android:layout_width="115dp"
+        android:layout_height="109dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:scaleType="fitCenter"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

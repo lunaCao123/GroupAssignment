@@ -21,7 +21,7 @@ public class TopicDetail3Fragment extends Fragment {
     private TextView detail3_topicDetail;
     private Button detail3_quizButton;
     private ImageView detail3_image;
-    private int topicID;
+    private int topicNo;
 
     public TopicDetail3Fragment(){
 
@@ -30,7 +30,7 @@ public class TopicDetail3Fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        topicID = getArguments().getInt("id");
+        topicNo = getArguments().getInt("no");
 
     }
 
@@ -41,7 +41,7 @@ public class TopicDetail3Fragment extends Fragment {
         detail3_topicDetail = view.findViewById(R.id.topicDetail3_detail1Text);
         detail3_image = view.findViewById(R.id.topicDetail3_imageView);
         detail3_quizButton = view.findViewById(R.id.topicDetail3_quizBtn);
-        final Topic topic = TopicsDB.getTopicById(topicID);
+        final Topic topic = TopicsDB.getTopicById(topicNo);
 
         detail3_topicName.setText(topic.getTopicName());
         detail3_topicDetail.setText(topic.getDetail3());
@@ -51,7 +51,7 @@ public class TopicDetail3Fragment extends Fragment {
             public void onClick(View v) {
                 QuizRecyclerFragment quizRecyclerFragment = new QuizRecyclerFragment();
                 Bundle bundle = new Bundle();
-                bundle.putInt("id", topic.getTopicID());
+                bundle.putString("id", topic.getTopicID());
                 quizRecyclerFragment.setArguments(bundle);
 
                 ((FragmentActivity) v.getContext()).getSupportFragmentManager()

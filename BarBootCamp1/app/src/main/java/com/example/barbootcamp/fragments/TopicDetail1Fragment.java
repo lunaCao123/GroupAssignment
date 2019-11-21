@@ -21,7 +21,7 @@ public class TopicDetail1Fragment extends Fragment {
    private TextView detail_topicDetail1;
    private ImageView detail_topicImage;
    private ImageButton detail_nextButton;
-   private int topicID;
+   private int topicNo;
    private Button detail_quizButton;
 
    public TopicDetail1Fragment(){
@@ -31,7 +31,7 @@ public class TopicDetail1Fragment extends Fragment {
    @Override
     public void onCreate(Bundle savedInstanceState) {
        super.onCreate(savedInstanceState);
-       topicID = getArguments().getInt("id");
+       topicNo = getArguments().getInt("no");
 
    }
 
@@ -43,7 +43,7 @@ public class TopicDetail1Fragment extends Fragment {
        detail_topicImage = view.findViewById(R.id.topicDetail_imageView);
        detail_nextButton = view.findViewById(R.id.topicDetail_nextButton);
        detail_quizButton = view.findViewById(R.id.topicDetail1_quizBtn);
-       final Topic topic = TopicsDB.getTopicById(topicID);
+       final Topic topic = TopicsDB.getTopicById(topicNo);
 
        detail_topicName.setText(topic.getTopicName());
        detail_topicDetail1.setText(topic.getDetail1());
@@ -54,7 +54,7 @@ public class TopicDetail1Fragment extends Fragment {
           public void onClick(View v) {
              TopicDetail2Fragment topicDetail2Fragment = new TopicDetail2Fragment();
              Bundle bundle = new Bundle();
-             bundle.putInt("id",topic.getTopicID());
+             bundle.putInt("no",topic.getTopicNo());
              topicDetail2Fragment.setArguments(bundle);
 
              ((FragmentActivity)v.getContext()).getSupportFragmentManager()
@@ -67,7 +67,7 @@ public class TopicDetail1Fragment extends Fragment {
          public void onClick(View v) {
             QuizRecyclerFragment quizRecyclerFragment = new QuizRecyclerFragment();
             Bundle bundle = new Bundle();
-            bundle.putInt("id", topic.getTopicID());
+            bundle.putString("id", topic.getTopicID());
             quizRecyclerFragment.setArguments(bundle);
 
             ((FragmentActivity) v.getContext()).getSupportFragmentManager()

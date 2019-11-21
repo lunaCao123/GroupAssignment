@@ -20,7 +20,7 @@ public class TopicDetail2Fragment extends Fragment {
     private TextView detail2_topicDetail;
     private ImageButton detail2_nextButton;
     private ImageView detail2_image;
-    private int topicID;
+    private int topicNo;
 
     public TopicDetail2Fragment(){
 
@@ -29,7 +29,7 @@ public class TopicDetail2Fragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        topicID = getArguments().getInt("id");
+        topicNo = getArguments().getInt("no");
 
     }
 
@@ -40,7 +40,7 @@ public class TopicDetail2Fragment extends Fragment {
         detail2_topicDetail = view. findViewById(R.id.topicDetail2_detail1Text);
         detail2_image = view.findViewById(R.id.topicDetail2_imageView);
         detail2_nextButton = view.findViewById(R.id.topicDetail2_nextButton);
-        final Topic topic = TopicsDB.getTopicById(topicID);
+        final Topic topic = TopicsDB.getTopicById(topicNo);
 
         detail2_topicName.setText(topic.getTopicName());
         detail2_topicDetail.setText(topic.getDetail2());
@@ -51,7 +51,7 @@ public class TopicDetail2Fragment extends Fragment {
             public void onClick(View v) {
                 TopicDetail3Fragment topicDetail3Fragment = new TopicDetail3Fragment();
                 Bundle bundle = new Bundle();
-                bundle.putInt("id",topic.getTopicID());
+                bundle.putInt("no",topic.getTopicNo());
                 topicDetail3Fragment.setArguments(bundle);
 
                 ((FragmentActivity)v.getContext()).getSupportFragmentManager()

@@ -10,8 +10,8 @@ import java.util.List;
 
 public class TopicsDB {
 
-    public static Topic getTopicById(int topicID) {
-        return topics.get(topicID);
+    public static Topic getTopicById(int topicNo) {
+        return topics.get(topicNo);
     }
 
     public static ArrayList<Topic> getAllTopics() {
@@ -23,6 +23,7 @@ public class TopicsDB {
     static {
         topics.put(1, new Topic(
                 1,
+                "1",
                 "Beer and Wine",
                 "Beginner",
                 "Beer is one of the oldest and most widely consumed alcoholic drinks in the world. It is also the third most popular drink overall, after water and tea. Beer is brewed from cereal grains - mostly from malted barley, although wheat, maize, and rice are also used. Most modern beer is brewed with hops, which adds bitterness and other flavours and act as a natural preservative and stabilizing agent. Other flavouring agents such as gruit, herbs, or fruits may be included or used instead of hops. \n " +
@@ -56,7 +57,8 @@ public class TopicsDB {
                 "Beer and Wine Quiz"
         ));
         topics.put(2, new Topic(
-                2,
+                1,
+                "2",
                 "Vodka, Gin and Whiskey",
                 "Intermediate",
                 "Vodka, the crystal clear spirit, is simply a distilled spirit that's made from water and ethanol. Vodka is fermented, distilled and filtered, and can be made from pretty much anything that is able to go through that process and end up making alcohol. \n " +
@@ -89,6 +91,7 @@ public class TopicsDB {
         ));
         topics.put(3, new Topic(
                 3,
+                "3",
                 "Rum, Tequila and Other Festive Spirits",
                 "Intermediate",
                 "Rum is the finest application of sugar cane known to man. It's made from a distillate of either the fermented juice of sugar cane, sugar cane syrup or sugar cane molasses. THe origins of rum lie in the Caribbean islands, where modern rum production got its start and where island nations continue to produce the majority of the world's sugar cane spirits. \n" +
@@ -121,6 +124,7 @@ public class TopicsDB {
         ));
         topics.put(5, new Topic(
                 5,
+                "5",
                 "Cocktail Equipment and Garnishes",
                 "Advanced",
                 "Being well equipped to make any drink is one of the basic steps in running a successful bar. This includes cocktails. By definition, a cocktail is an alcoholic drink consisting of a spirit or spirits mixed with other ingredients. However, to get started in cocktail making you need to know what tools are on offer for you to use, and when it is best to use each. \n " +
@@ -154,7 +158,8 @@ public class TopicsDB {
                 "Cocktail Equipment and Garnishes Quiz"
         ));
         topics.put(4, new Topic(
-                4,
+                5,
+                "4",
                 "Classic Cocktails",
                 "Advanced",
                 "The first two classic cocktails that you will learn are some that you have most definitely had before: the Whisky Sour and the Espresso Martini. Both are shaken cocktails and are insanely popular in Australia due to their clean taste and ability to be adapted into other variations. But we will only show you the original recipes. \n" +
@@ -220,6 +225,7 @@ public class TopicsDB {
         ));
         topics.put(6, new Topic(
                 6,
+                "6",
                 "Cocktail Making Techniques",
                 "Advanced",
                 "There are some terms that you may have come across when reading through the cocktail specs we provided to you, and your confusion is justified. There are very specific techniques that must be learned by any aspiring bartender that allow for the best cocktails to be made. \n " +
