@@ -56,7 +56,7 @@
         android:id="@+id/welcomePage_userNameEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="100dp"
         android:editable="true"
         android:ems="10"
         android:hint="@string/user_name"
@@ -65,7 +65,6 @@
         android:textColorHint="@color/colorAccent"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomePage_welcomeText" />
 
@@ -73,7 +72,7 @@
         android:id="@+id/welcomePage_startButton"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="105dp"
         android:background="@color/colorPrimary"
         android:contentDescription="@string/start_app"
         android:onClick="setStartButton"
@@ -81,5 +80,17 @@
         app:layout_constraintStart_toEndOf="@+id/welcomePage_userNameEditText"
         app:layout_constraintTop_toBottomOf="@+id/welcomePage_welcomeText"
         tools:srcCompat="@drawable/ic_arrow_forward_gold" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/warning_sign"
+        android:textColor="@color/Orange"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomePage_userNameEditText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
