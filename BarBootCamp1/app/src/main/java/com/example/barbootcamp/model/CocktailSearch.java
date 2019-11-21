@@ -2,7 +2,7 @@ package com.example.barbootcamp.model;
 
 import java.util.ArrayList;
 
-public class CocktailSeach {
+public class CocktailSearch {
 
     private String strDrink;
     private String strCategory;

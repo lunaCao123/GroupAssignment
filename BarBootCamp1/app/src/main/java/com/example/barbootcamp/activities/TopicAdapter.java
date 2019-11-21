@@ -57,7 +57,8 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
             public void onClick(View v) {
                 TopicDetail1Fragment topicDetail1Fragment = new TopicDetail1Fragment();
                 Bundle bundle = new Bundle();
-                bundle.putInt("id",topicAtPosition.getTopicID());
+                bundle.putInt("no",topicAtPosition.getTopicNo());
+                bundle.putString("id",topicAtPosition.getTopicID());
                 topicDetail1Fragment.setArguments(bundle);
 
                 ((FragmentActivity)v.getContext()).getSupportFragmentManager()
@@ -83,7 +84,7 @@ public class TopicAdapter extends RecyclerView.Adapter<TopicAdapter.TopicViewHol
             super(v);
             view = v;
             topicNameTextView = v.findViewById(R.id.topic_topicName);
-            topicLevelTextView = v.findViewById(R.id.topic_topicLevel);
+            topicLevelTextView = v.findViewById(R.id.topic_topiclevel);
             topicImageView = v.findViewById(R.id.topic_imageView);
         }
     }

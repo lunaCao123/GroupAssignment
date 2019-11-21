@@ -2,7 +2,7 @@ package com.example.barbootcamp.model;
 
 public class Question {
     public int questionID;
-    public int topicID;
+    public String topicID;
     public int questionNumber;
     public String question;
     public String answer;
@@ -12,7 +12,7 @@ public class Question {
     public String option4;
 
     public Question (int questionID,
-                     int topicID,
+                     String topicID,
                      int questionNumber,
                      String question,
                      String answer,
@@ -35,9 +35,9 @@ public class Question {
 
     public void setQuestionID(int questionID) { this.questionID = questionID; }
 
-    public int getTopicID() { return topicID; }
+    public String getTopicID() { return topicID; }
 
-    public void setTopicID(int topicID) { this.topicID = topicID; }
+    public void setTopicID(String topicID) { this.topicID = topicID; }
 
     public int getQuestionNumber() {return questionNumber; }
 

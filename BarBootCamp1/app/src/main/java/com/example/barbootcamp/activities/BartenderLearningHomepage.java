@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.example.barbootcamp.R;
 import com.example.barbootcamp.fragments.ProgressPageFragment;
@@ -55,6 +57,12 @@ public class BartenderLearningHomepage extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.fragmentMain_slot, fragment);
         fragmentTransaction.commit();
+    }
+
+    public void home_btn (View view){
+        Intent intent = new Intent(this, ChooseUserTypeActivity.class);
+        startActivity(intent);
+
     }
 
 }

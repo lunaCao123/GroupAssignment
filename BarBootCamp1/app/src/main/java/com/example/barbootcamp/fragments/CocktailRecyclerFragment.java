@@ -19,15 +19,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.barbootcamp.R;
+import com.example.barbootcamp.SearchCocktailDatabase;
+import com.example.barbootcamp.activities.ChooseUserTypeActivity;
 import com.example.barbootcamp.activities.CocktailAdapter;
+import com.example.barbootcamp.activities.MainActivity;
 import com.example.barbootcamp.database.CocktailDatabase;
 import com.example.barbootcamp.model.Cocktail;
-import com.example.barbootcamp.model.CocktailSeach;
+import com.example.barbootcamp.model.CocktailSearch;
 import com.example.barbootcamp.model.CocktailSearchResponse;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class CocktailRecyclerFragment extends Fragment {
@@ -47,7 +49,7 @@ public class CocktailRecyclerFragment extends Fragment {
     public View onCreateView (LayoutInflater inflater, ViewGroup container,
                               Bundle savedInstanceState){
 
-        final View view = inflater.inflate(R.layout.fragment_cocktail_recycler, container, false);
+        View view = inflater.inflate(R.layout.fragment_cocktail_recycler, container, false);
         recyclerView_cocktail = view.findViewById(R.id.cocktail_rv);
 
 
@@ -63,12 +65,11 @@ public class CocktailRecyclerFragment extends Fragment {
         Response.Listener<String>responseListener = new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                System.out.println("Request Responded");
                 Gson gson = new Gson();
                 CocktailSearchResponse cocktailSearchResponse = gson.fromJson(response, CocktailSearchResponse.class);
-                CocktailSeach cocktailSeach = cocktailSearchResponse.getResults();
-                List<Cocktail>cocktailresults = cocktailSeach.getCocktails();
-
-                cocktailAdapter.setCocktailData(cocktailresults);
+                cocktailAdapter.setCocktailData(cocktailSearchResponse.getDrinks());
+               // SearchCocktailDatabase.saveCocktailsToDatabase(cocktailSearchResponse.cocktailresultList);
                 recyclerView_cocktail.setAdapter(cocktailAdapter);
 
                 requestQueue.stop();
@@ -84,57 +85,38 @@ public class CocktailRecyclerFragment extends Fragment {
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, responseListener, errorListener);
 
         requestQueue.add(stringRequest);
-//        StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-//            @Override
-//            public void onResponse(String response) {
-//                System.out.println("Request Responded");
-//                Gson gson = new Gson();
-//                Cocktail cocktail = gson.fromJson(response, Cocktail.class);
-//                cocktaildb = CocktailDatabase.getInstance(getContext());
-//                ArrayList<Cocktail> newList = new ArrayList<Cocktail>(cocktailList);
-//                cocktaildb.cocktailDao().insertAll(newList);
-//                cocktailAdapter.setCocktailData(cocktailList);
-//                recyclerView_cocktail.setAdapter(cocktailAdapter);
-//            }
-//        }, new Response.ErrorListener() {
-//            @Override
-//            public void onErrorResponse(VolleyError error) {
-//                System.out.println("The Request Failed");
-//            }
-//
-//        });
-//        requestQueue.add(stringRequest);
-//        search_btn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                searchInput = searchEditText.getText().toString();
-//                String searchText = setSearchText.getText().toString();
-//
-//                RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-//                String url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f="+searchText;
-//                StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        System.out.println("Request Responded");
-//                        Gson gson = new Gson();
-//                        cocktailArray = gson.fromJson(response, Cocktail[].class);
-//                        cocktailList = Arrays.asList(cocktailArray);
-//                        cocktaildb = CocktailDatabase.getInstance(getContext());
-//                        ArrayList<Cocktail> newList = new ArrayList<>(cocktailList);
-//                        cocktaildb.cocktailDao().insertAll(newList);
-//                        cocktailAdapter.setCocktailData(cocktailList);
-//                        recyclerView_cocktail.setAdapter(cocktailAdapter);
-//                    }
-//                }, new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        System.out.println("The Request Failed");
-//                    }
-//
-//                });
-//                requestQueue.add(stringRequest);
-//            }
-//        });
+
+        search_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                searchInput = searchEditText.getText().toString();
+                setSearchText.setVisibility(View.INVISIBLE);
+                setSearchText.setText(searchInput);
+                String searchText = setSearchText.getText().toString();
+
+                RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+                String url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f="+searchText;
+                StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        System.out.println("Request Responded");
+                        Gson gson = new Gson();
+                        CocktailSearchResponse cocktailSearchResponse = gson.fromJson(response, CocktailSearchResponse.class);
+                        cocktailAdapter.setCocktailData(cocktailSearchResponse.getDrinks());
+                        recyclerView_cocktail.setAdapter(cocktailAdapter);
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        System.out.println("The Request Failed");
+                    }
+
+                });
+                requestQueue.add(stringRequest);
+            }
+        });
+
         return view;
         }
+
     }

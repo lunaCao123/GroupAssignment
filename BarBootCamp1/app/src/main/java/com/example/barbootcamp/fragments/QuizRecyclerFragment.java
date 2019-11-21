@@ -16,6 +16,7 @@ import com.example.barbootcamp.model.Question;
 import com.example.barbootcamp.model.QuestionBank;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class QuizRecyclerFragment extends Fragment {
@@ -23,9 +24,9 @@ public class QuizRecyclerFragment extends Fragment {
     private RecyclerView recyclerView;
     private Button submitBtn;
     private Button cancelBtn;
-    private int topicID;
+    private String topicId;
     private List<Question>questionList;
-    private List<Question>newQlist;
+
 
     public QuizRecyclerFragment(){
 
@@ -33,7 +34,8 @@ public class QuizRecyclerFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        topicID = getArguments().getInt("id");
+        String topic = getArguments().getString("id");
+        topicId = topic;
 
     }
 
@@ -46,7 +48,13 @@ public class QuizRecyclerFragment extends Fragment {
 
         QuizAdapter quizAdapter = new QuizAdapter();
         questionList = QuestionBank.getAllQuestions();
-        quizAdapter.setQuestionData(questionList);
+        List<Question>newQlist = new ArrayList<>();
+        for(Question q: this.questionList){
+            if(q.getTopicID().equals(topicId)){
+                newQlist.add(q);
+            }
+        }
+        quizAdapter.setQuestionData(newQlist);
         recyclerView.setAdapter(quizAdapter);
 
 
