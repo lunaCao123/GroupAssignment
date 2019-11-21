@@ -1,6 +1,7 @@
 package com.example.barbootcamp.activities;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,10 +9,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.barbootcamp.R;
+import com.example.barbootcamp.fragments.CocktailDetailFragment;
+import com.example.barbootcamp.fragments.TopicDetail1Fragment;
 import com.example.barbootcamp.model.Cocktail;
 
 import java.util.List;
@@ -47,6 +51,19 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
             Glide.with(holder.view.getContext()).load(R.drawable.cocktails).into(holder.cocktailImage);
         }
 
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CocktailDetailFragment cocktailDetailFragment = new CocktailDetailFragment();
+                Bundle bundle = new Bundle();
+                bundle.putInt("idDrink",cocktailAtPosition.getIdDrink());
+                cocktailDetailFragment.setArguments(bundle);
+
+                ((FragmentActivity)v.getContext()).getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.cocktail_fragmentslot,
+                        cocktailDetailFragment).commit();
+            }
+        });
 
     }
 
@@ -69,18 +86,6 @@ public class CocktailAdapter extends RecyclerView.Adapter<CocktailAdapter.Cockta
             cocktailNameTextView = v.findViewById(R.id.cocktail_cocktailNameText);
             cocktailImage = v.findViewById(R.id.cocktail_image);
         }
-
-
-
-
-//            String imageUrl = cocktail.getStrDrinkThumb();
-//            if(imageUrl != null){
-//                Glide.with(view.getContext()).load(imageUrl).into(cocktailImage);
-//            }else{
-//                Glide.with(view.getContext()).load(R.drawable.cocktails).into(cocktailImage);
-//            }
-
-
         }
     }
 

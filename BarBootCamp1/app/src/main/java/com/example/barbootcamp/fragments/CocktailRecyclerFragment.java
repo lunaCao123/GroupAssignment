@@ -60,7 +60,7 @@ public class CocktailRecyclerFragment extends Fragment {
         recyclerView_cocktail.setLayoutManager(layoutManager);
         final CocktailAdapter cocktailAdapter = new CocktailAdapter();
         final RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-        String url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=b";
+        String url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a";
 
         Response.Listener<String>responseListener = new Response.Listener<String>() {
             @Override
@@ -69,8 +69,9 @@ public class CocktailRecyclerFragment extends Fragment {
                 Gson gson = new Gson();
                 CocktailSearchResponse cocktailSearchResponse = gson.fromJson(response, CocktailSearchResponse.class);
                 cocktailAdapter.setCocktailData(cocktailSearchResponse.getDrinks());
-               // SearchCocktailDatabase.saveCocktailsToDatabase(cocktailSearchResponse.cocktailresultList);
                 recyclerView_cocktail.setAdapter(cocktailAdapter);
+                recyclerView_cocktail.setVisibility(View.INVISIBLE);
+
 
                 requestQueue.stop();
             }
@@ -103,7 +104,10 @@ public class CocktailRecyclerFragment extends Fragment {
                         Gson gson = new Gson();
                         CocktailSearchResponse cocktailSearchResponse = gson.fromJson(response, CocktailSearchResponse.class);
                         cocktailAdapter.setCocktailData(cocktailSearchResponse.getDrinks());
+                        CocktailDatabase cocktailDatabase = CocktailDatabase.getInstance(getContext());
+                        cocktailDatabase.cocktailDao().insertAll(cocktailSearchResponse.getDrinks());
                         recyclerView_cocktail.setAdapter(cocktailAdapter);
+                        recyclerView_cocktail.setVisibility(View.VISIBLE);
                     }
                 }, new Response.ErrorListener() {
                     @Override

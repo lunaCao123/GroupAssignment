@@ -20,5 +20,5 @@ public interface CocktailDao {
     List<Cocktail>getAllCocktails();
 
     @Query("SELECT * FROM cocktail WHERE idDrink = :idDrink")
-    Cocktail findCocktailById(String idDrink);
+    Cocktail findCocktailById(int idDrink);
 }
