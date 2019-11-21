@@ -54,7 +54,7 @@ public class QuizRecyclerFragment extends Fragment {
 
         QuizAdapter quizAdapter = new QuizAdapter();
         questionList = QuestionBank.getAllQuestions();
-        List<Question>newQlist = new ArrayList<>();
+        final List<Question>newQlist = new ArrayList<>();
         for(Question q: this.questionList){
             if(q.getTopicID().equals(topicId)){
                 newQlist.add(q);
@@ -66,8 +66,7 @@ public class QuizRecyclerFragment extends Fragment {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for(Question q: questionList) {
-                    if(q.getTopicID().equals(topicId)) {
+                for(Question q: newQlist) {
                         RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.quiz_radioGroup);
                         int selectedId = radioGroup.getCheckedRadioButtonId();
                         int answer = q.getAnswer();
@@ -76,9 +75,7 @@ public class QuizRecyclerFragment extends Fragment {
                         } else {
                             score += 0;
                         }
-                    }
                 }
-
                 System.out.print("You got " + score + " in your quiz");
             }
         });
