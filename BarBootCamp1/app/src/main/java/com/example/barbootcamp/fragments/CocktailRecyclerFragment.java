@@ -19,18 +19,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.barbootcamp.R;
-import com.example.barbootcamp.SearchCocktailDatabase;
-import com.example.barbootcamp.activities.ChooseUserTypeActivity;
 import com.example.barbootcamp.activities.CocktailAdapter;
-import com.example.barbootcamp.activities.MainActivity;
 import com.example.barbootcamp.database.CocktailDatabase;
 import com.example.barbootcamp.model.Cocktail;
-import com.example.barbootcamp.model.CocktailSearch;
 import com.example.barbootcamp.model.CocktailSearchResponse;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CocktailRecyclerFragment extends Fragment {
     private RecyclerView recyclerView_cocktail;
