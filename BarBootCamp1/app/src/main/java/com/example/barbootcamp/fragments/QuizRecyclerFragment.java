@@ -11,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,6 +19,7 @@ import com.example.barbootcamp.R;
 import com.example.barbootcamp.activities.QuizAdapter;
 import com.example.barbootcamp.model.Question;
 import com.example.barbootcamp.model.QuestionBank;
+import com.example.barbootcamp.model.QuizResult;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,6 +32,7 @@ public class QuizRecyclerFragment extends Fragment {
     private Button cancelBtn;
     private String topicId;
     private List<Question>questionList;
+    public static List<Question>correctList;
 
 
     private int score;
@@ -46,7 +49,7 @@ public class QuizRecyclerFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_quiz_recycler, container, false);
         recyclerView = view.findViewById(R.id.rv_quiz);
         LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
@@ -66,17 +69,28 @@ public class QuizRecyclerFragment extends Fragment {
         submitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                for(Question q: newQlist) {
-                        RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.quiz_radioGroup);
-                        int selectedId = radioGroup.getCheckedRadioButtonId();
-                        int answer = q.getAnswer();
-                        if (selectedId == answer) {
-                            score += 1;
-                        } else {
-                            score += 0;
-                        }
+
+                for (Question q : newQlist) {
+                    RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.quiz_radioGroup);
+                    int selectedId = radioGroup.getCheckedRadioButtonId();
+                    int answer = q.getAnswer();
+                    if (selectedId == answer) {
+                        correctList.add(q);
+                    }
                 }
-                System.out.print("You got " + score + " in your quiz");
+                int score = correctList.size();
+                QuizResult quizResult = null;
+                quizResult.setQuizResult(score);
+                quizResult.setTopicId(topicId);
+                int resultid = Integer.parseInt(topicId);
+                quizResult.setResultid(resultid);
+
+
+                ProgressPageFragment progressPageFragment = new ProgressPageFragment();
+
+                ((FragmentActivity) view.getContext()).getSupportFragmentManager()
+                        .beginTransaction().replace(R.id.fragmentMain_slot,
+                        progressPageFragment).commit();
             }
         });
         return view;

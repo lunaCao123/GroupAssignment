@@ -59,25 +59,25 @@
         app:layout_constraintTop_toBottomOf="@+id/quiz_question">
 
         <RadioButton
-            android:id="@+id/quiz_answer1_rbtn"
+            android:id="@+id/answer1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/quiz_answer" />
 
         <RadioButton
-            android:id="@+id/quiz_answer2_rbtn"
+            android:id="@+id/answer2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/quiz_answer" />
 
         <RadioButton
-            android:id="@+id/quiz_answer3_rbtn"
+            android:id="@+id/answer3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/quiz_answer" />
 
         <RadioButton
-            android:id="@+id/quiz_answer4_rbtn"
+            android:id="@+id/answer4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/quiz_answer"

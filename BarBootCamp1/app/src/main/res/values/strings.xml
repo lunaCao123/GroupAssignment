@@ -34,4 +34,13 @@
     <string name="Instruction_sample">Sample Instructions</string>
     <string name="warning_sign">You have to be over 18 to enter this App</string>
     <string name="favourite_lab">Favourite Drinks</string>
+    <string name="progress_lab">Course Progress</string>
+    <string name="result_lab">Quiz Results</string>
+    <string name="topic1">Beer and Wine</string>
+    <string name="topic2">Vodka, Gin and Whiskey</string>
+    <string name="topic3">Rum, Tequila and Other Festive Spirits</string>
+    <string name="topic4">Classic Cocktails</string>
+    <string name="topic5">Cocktail Equipment and Garnishes</string>
+    <string name="topic6">Cocktail Making Techniques</string>
+    <string name="badge_lab">Badges</string>
 </resources>

@@ -1,6 +1,5 @@
 package com.example.barbootcamp.activities;
 
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,13 +12,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.barbootcamp.R;
 import com.example.barbootcamp.model.Question;
-import com.example.barbootcamp.model.Topic;
 
 import java.util.List;
 
 public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder> {
 
     private List<Question>questionsToAdapt;
+    //public static List<Question>correctList;
     public void setQuestionData (List<Question>questionsToAdapt){
         this.questionsToAdapt = questionsToAdapt;
     }
@@ -33,7 +32,7 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull QuizViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final QuizViewHolder holder, int position) {
         final Question questionAtPosition = questionsToAdapt.get(position);
         int quizno = questionAtPosition.getQuestionNumber();
         String quizNvm = Integer.toString(quizno);
@@ -44,6 +43,15 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
         holder.b_rbtn.setText(questionAtPosition.option2);
         holder.c_rbtn.setText(questionAtPosition.option3);
         holder.d_rbtn.setText(questionAtPosition.option4);
+//        holder.answerGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(RadioGroup group, int checkedId) {
+//                checkedId = holder.answerGroup.getCheckedRadioButtonId();
+//                if(checkedId == questionAtPosition.answer){
+//                    correctList.add(questionAtPosition);
+//                }
+//            }
+//        });
     }
 
 
@@ -69,10 +77,10 @@ public class QuizAdapter extends RecyclerView.Adapter<QuizAdapter.QuizViewHolder
             qnvm = v.findViewById(R.id.quiz_qnvm);
             questionText = v.findViewById(R.id.quiz_question);
             answerGroup = v.findViewById(R.id.quiz_radioGroup);
-            a_rbtn = v.findViewById(R.id.quiz_answer1_rbtn);
-            b_rbtn = v.findViewById(R.id.quiz_answer2_rbtn);
-            c_rbtn = v.findViewById(R.id.quiz_answer3_rbtn);
-            d_rbtn = v.findViewById(R.id.quiz_answer4_rbtn);
+            a_rbtn = v.findViewById(R.id.answer1);
+            b_rbtn = v.findViewById(R.id.answer2);
+            c_rbtn = v.findViewById(R.id.answer3);
+            d_rbtn = v.findViewById(R.id.answer4);
         }
     }
 }
