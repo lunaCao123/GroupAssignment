@@ -10,6 +10,10 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.example.barbootcamp.R;
+import com.example.barbootcamp.model.Question;
+import com.example.barbootcamp.model.QuizResult;
+
+import java.util.List;
 
 public class ProgressPageFragment extends Fragment {
     private TextView result1;
@@ -24,6 +28,12 @@ public class ProgressPageFragment extends Fragment {
     private ImageView badge4;
     private ImageView badge5;
     private ImageView badge6;
+    private List<Question>answered1list;
+    private List<Question>answered2list;
+    private List<Question>answered3list;
+    private List<Question>answered4list;
+    private List<Question>answered5list;
+    private List<Question>answered6list;
 
     public ProgressPageFragment(){
 
@@ -44,9 +54,6 @@ public class ProgressPageFragment extends Fragment {
         badge4 = view.findViewById(R.id.progress_bg4);
         badge5 = view.findViewById(R.id.progress_bg5);
         badge6 = view.findViewById(R.id.progress_bg6);
-
-
-
 
 
         return view;

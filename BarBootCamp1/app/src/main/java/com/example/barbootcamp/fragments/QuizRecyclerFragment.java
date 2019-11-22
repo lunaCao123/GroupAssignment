@@ -71,21 +71,13 @@ public class QuizRecyclerFragment extends Fragment {
             public void onClick(View view) {
 
                 for (Question q : newQlist) {
-                    RadioGroup radioGroup = (RadioGroup) view.findViewById(R.id.quiz_radioGroup);
+                    RadioGroup radioGroup = view.findViewById(R.id.quiz_radioGroup);
                     int selectedId = radioGroup.getCheckedRadioButtonId();
                     int answer = q.getAnswer();
                     if (selectedId == answer) {
                         correctList.add(q);
                     }
                 }
-                int score = correctList.size();
-                QuizResult quizResult = null;
-                quizResult.setQuizResult(score);
-                quizResult.setTopicId(topicId);
-                int resultid = Integer.parseInt(topicId);
-                quizResult.setResultid(resultid);
-
-
                 ProgressPageFragment progressPageFragment = new ProgressPageFragment();
 
                 ((FragmentActivity) view.getContext()).getSupportFragmentManager()
